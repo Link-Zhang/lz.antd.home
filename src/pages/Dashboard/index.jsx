@@ -1,8 +1,13 @@
 import React from 'react';
 import {Row, Col} from 'antd';
 
+import FallHouse from './components/FallHouse';
+import RiseHouse from './components/RiseHouse';
+import SaleHouse from './components/SaleHouse';
 import DashboardTab from './components/DashboardTab';
-import Test from "../../components/Test";
+import AvgTotalPrice from './components/AvgTotalPrice';
+
+// import Test from "../../components/Test";
 
 class Dashboard extends React.PureComponent {
     render() {
@@ -10,9 +15,18 @@ class Dashboard extends React.PureComponent {
             <div>
                 <DashboardTab/>
                 <div>
-                    <Row gutter={24}>
-                        <Col lg={24} md={24}>
-                            <Test/>
+                    <Row gutter={8}>
+                        <Col span={6}>
+                            <SaleHouse/>
+                        </Col>
+                        <Col span={6}>
+                            <AvgTotalPrice/>
+                        </Col>
+                        <Col span={6}>
+                            <RiseHouse/>
+                        </Col>
+                        <Col span={6}>
+                            <FallHouse/>
                         </Col>
                     </Row>
                 </div>

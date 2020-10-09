@@ -3,7 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import {applyMiddleware, createStore} from 'redux';
 import {persistStore, persistReducer} from 'redux-persist';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
+import autoMergeLevel1 from 'redux-persist/lib/stateReconciler/autoMergeLevel1';
 
 import initState from './PreloadedState';
 import createRootReducer from './Reducer';
@@ -11,7 +11,7 @@ import createRootReducer from './Reducer';
 const persistConfig = {
     key: 'root',
     storage,
-    stateReconciler: hardSet,
+    stateReconciler: autoMergeLevel1,
     whitelist: ['App'],
 };
 

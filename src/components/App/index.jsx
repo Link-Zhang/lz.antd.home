@@ -9,7 +9,7 @@ import Side from '../Side';
 import Bread from '../Bread';
 import House from '../../pages/House';
 import Community from '../../pages/Community';
-import Dashboard from '../../pages/Dashboard';
+import Dashboard from '../../pages/Dashboard/index';
 
 const routes = [
     {

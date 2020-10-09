@@ -1,21 +1,23 @@
 import {dashboardConstants} from '../redux/ActionTypes';
 
 // Action Creator
-export const dashboardDataLoadActionCreator = (totalHouse, avgTotalPrice, avgUnitPrice, data) => {
+export const dashboardDataLoadActionCreator = (saleHouse, avgTotalPrice, riseHouse, fallHouse, data) => {
     return {
         type: dashboardConstants.DATA_LOAD,
-        totalHouse: totalHouse,
+        saleHouse: saleHouse,
         avgTotalPrice: avgTotalPrice,
-        avgUnitPrice: avgUnitPrice,
+        riseHouse: riseHouse,
+        fallHouse: fallHouse,
         data: data,
     };
 };
 
 // Init state
 const initState = {
-    totalHouse: 0,
-    avgTotalPrice: 0,
-    avgUnitPrice: 0,
+    saleHouse: 9999,
+    avgTotalPrice: 9999,
+    riseHouse: 9999,
+    fallHouse: 9999,
     data: [{}],
 };
 
@@ -25,9 +27,10 @@ const reducer = (state = initState, action = {}) => {
         case dashboardConstants.DATA_LOAD:
             return {
                 ...state,
-                totalHouse: action.totalHouse,
+                saleHouse: action.saleHouse,
                 avgTotalPrice: action.avgTotalPrice,
-                avgUnitPrice: action.avgUnitPrice,
+                riseHouse: action.riseHouse,
+                fallHouse: action.fallHouse,
                 data: action.data,
             };
         default:

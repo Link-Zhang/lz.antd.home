@@ -6,6 +6,7 @@ import RiseHouse from './components/RiseHouse';
 import SaleHouse from './components/SaleHouse';
 import DashboardTab from './components/DashboardTab';
 import AvgTotalPrice from './components/AvgTotalPrice';
+import StatisticChart from "./components/StatisticChart";
 
 // import Test from "../../components/Test";
 
@@ -14,22 +15,28 @@ class Dashboard extends React.PureComponent {
         return (
             <div>
                 <DashboardTab/>
-                <div>
-                    <Row gutter={8}>
-                        <Col span={6}>
-                            <SaleHouse/>
-                        </Col>
-                        <Col span={6}>
-                            <AvgTotalPrice/>
-                        </Col>
-                        <Col span={6}>
-                            <RiseHouse/>
-                        </Col>
-                        <Col span={6}>
-                            <FallHouse/>
-                        </Col>
-                    </Row>
-                </div>
+                <Row gutter={[16, 16]}>
+                    <Col span={6}>
+                        <SaleHouse/>
+                    </Col>
+                    <Col span={6}>
+                        <AvgTotalPrice/>
+                    </Col>
+                    <Col span={6}>
+                        <RiseHouse/>
+                    </Col>
+                    <Col span={6}>
+                        <FallHouse/>
+                    </Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col span={12}>
+                        <StatisticChart/>
+                    </Col>
+                    <Col span={12}>
+                        <StatisticChart/>
+                    </Col>
+                </Row>
             </div>
         );
     }

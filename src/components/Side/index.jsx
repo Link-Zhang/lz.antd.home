@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {bindActionCreators} from 'redux';
 
+import './index.less';
 import Svg from '../Svg';
 import Logo from '../Logo';
 import menu from './config';
@@ -67,11 +68,8 @@ class Side extends React.PureComponent {
 
     render() {
         return (
-            <Sider theme={this.props.darkTheme ? 'dark' : 'light'} collapsible collapsed={this.props.sideCollapse}
-                   onCollapse={this.props.handleSideCollapse}
-                   style={{
-                       height: '100vh',
-                   }}>
+            <Sider className={'side-sider'} onCollapse={this.props.handleSideCollapse}
+                   theme={this.props.darkTheme ? 'dark' : 'light'} collapsible collapsed={this.props.sideCollapse}>
                 <Logo/>
                 <Menu theme={this.props.darkTheme ? 'dark' : 'light'} defaultSelectedKeys={this.firstItem}
                       mode='inline'>

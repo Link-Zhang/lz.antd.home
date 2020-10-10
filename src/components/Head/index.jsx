@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {bindActionCreators} from "redux";
+import {bindActionCreators} from 'redux';
 import {Layout, Menu, Switch} from 'antd';
 
 import './index.less';
-import Svg from "../Svg";
-import {appSwitchThemeActionCreator} from "../../acirs/App";
+import Svg from '../Svg';
+import {appSwitchThemeActionCreator} from '../../acirs/App';
 
 const {Header} = Layout;
 const {SubMenu} = Menu;
@@ -14,16 +14,16 @@ const {SubMenu} = Menu;
 class Head extends React.PureComponent {
     render() {
         return (
-            <Header className={this.props.darkTheme ? 'head-dark' : 'head-light'}>
-                <Menu mode='horizontal' style={{float: 'right'}} theme={this.props.darkTheme ? 'dark' : 'light'}>
-                    <Menu.Item key="theme">
-                        <Switch checked={this.props.darkTheme} onChange={this.props.handleSwitchTheme}
-                                checkedChildren='暗色'
-                                unCheckedChildren='亮色'/>
-                    </Menu.Item>
+            <Header className={this.props.darkTheme ? 'head-header-dark' : 'head-header-light'}>
+                <Menu className={'head-header-menu'} mode='horizontal' theme={this.props.darkTheme ? 'dark' : 'light'}>
                     <SubMenu title={<span><Svg type="UserOutlined"/>{this.props.userName}</span>}>
-                        <Menu.Item key="logout">
-                            <Svg type="LogoutOutlined"/>
+                        <Menu.Item key='theme'>
+                            <Svg type='AlertOutlined'/>
+                            <Switch size='small' checked={this.props.darkTheme}
+                                    onChange={this.props.handleSwitchTheme}/>
+                        </Menu.Item>
+                        <Menu.Item key='logout'>
+                            <Svg type='LogoutOutlined'/>
                             <span>注销</span>
                         </Menu.Item>
                     </SubMenu>

@@ -1,24 +1,28 @@
 import React from 'react';
-import {Avatar, Card} from 'antd';
+import {Card, Statistic} from 'antd';
 import PropTypes from 'prop-types';
 import CountUp from 'react-countup';
 
 import './index.less';
 import Svg from '../../../../components/Svg';
 
-const {Meta} = Card;
-
-const NumberCard = ({svg, color, title, number}) => {
+const NumberCard = ({svg, color, title, number, unit}) => {
     return (
-        <Card hoverable>
-            <Meta
-                avatar={
-                    <Avatar size={48} style={{backgroundColor: `${color}`,}} icon={<Svg type={svg}/>}/>
-                }
+        <Card hoverable
+            // style={{backgroundColor: '#011528', border: 0}}
+        >
+            <Statistic
                 title={title}
-                description={
-                    <CountUp start={0} end={number} duration={2.75} useEasing useGrouping separator=","/>
+                value={' '}
+                valueStyle={{color: `${color}`}}
+                prefix={
+                    <div>
+                        <Svg type={svg}/>
+                        {'    '}
+                        <CountUp start={0} end={number} duration={2.75} useEasing useGrouping separator=","/>
+                    </div>
                 }
+                suffix={unit}
             />
         </Card>
     )
@@ -29,6 +33,7 @@ NumberCard.propTypes = {
     color: PropTypes.string, // 颜色 #64EA91
     title: PropTypes.string, // 标题 房屋总数
     number: PropTypes.number, // 数字 1000
+    unit: PropTypes.string, // 单位 间
 };
 
 export default NumberCard;

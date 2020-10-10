@@ -36,7 +36,7 @@ class DashboardTab extends React.PureComponent {
 
     render() {
         return (
-            <Tabs onChange={this.handleTabClick} defaultActiveKey={menu[0]} size={'large'} centered={true}
+            <Tabs onChange={this.handleTabClick} defaultActiveKey={menu[0]} size={'small'} centered={true}
                   animated={true}>
                 {this.tabMenu}
             </Tabs>

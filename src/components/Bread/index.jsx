@@ -1,7 +1,6 @@
 import React from 'react';
 import {Breadcrumb} from 'antd';
-import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 import Svg from '../Svg';
 import menu from '../Side/config';

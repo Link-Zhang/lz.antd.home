@@ -14,10 +14,10 @@ export const dashboardDataLoadActionCreator = (saleHouse, avgTotalPrice, riseHou
 
 // Init state
 const initState = {
-    saleHouse: 9999,
-    avgTotalPrice: 9999,
-    riseHouse: 9999,
-    fallHouse: 9999,
+    saleHouse: 1111,
+    avgTotalPrice: 2222,
+    riseHouse: 3333,
+    fallHouse: 4444,
     data: [{}],
 };
 

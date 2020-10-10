@@ -11,7 +11,7 @@ export const appSideCollapseActionCreator = () => {
 
 // Init state
 const initState = {
-    darkTheme: true,
+    darkTheme: false,
     sideCollapse: false,
     userName: '未登录',
 };

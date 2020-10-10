@@ -3,16 +3,19 @@ import moment from 'moment';
 import {BackTop, Layout} from 'antd';
 
 import './index.less';
+import config from './config';
 
 const {Footer} = Layout;
 
 class Foot extends React.PureComponent {
     render() {
-        const author = 'Link Zhang';
+        const author = config.author;
         const from = moment().year();
-        const to = moment().add(70, 'y').year();
+        const to = moment().add(config.period, 'y').year();
         return (
-            <Footer className={'foot'}><BackTop/>{author}©{from}-{to}</Footer>
+            <Footer className={'foot-footer'}>
+                <BackTop/>{author}©{from}-{to}
+            </Footer>
         );
     };
 }

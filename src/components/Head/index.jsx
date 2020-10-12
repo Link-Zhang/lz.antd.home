@@ -15,15 +15,16 @@ class Head extends React.PureComponent {
     render() {
         return (
             <Header className={this.props.darkTheme ? 'head-header-dark' : 'head-header-light'}>
-                <Menu className={'head-header-menu'} mode='horizontal' theme={this.props.darkTheme ? 'dark' : 'light'}>
-                    <SubMenu title={<span><Svg type="UserOutlined"/>{this.props.userName}</span>}>
-                        <Menu.Item key='theme'>
-                            <Svg type='AlertOutlined'/>
-                            <Switch size='small' checked={this.props.darkTheme}
+                <Menu className={'head-header-menu'} mode={'horizontal'}
+                      theme={this.props.darkTheme ? 'dark' : 'light'}>
+                    <SubMenu title={<span><Svg type={'UserOutlined'}/>{this.props.userName}</span>}>
+                        <Menu.Item key={'theme'}>
+                            <Svg type={'AlertOutlined'}/>
+                            <Switch size={'small'} checked={this.props.darkTheme}
                                     onChange={this.props.handleSwitchTheme}/>
                         </Menu.Item>
-                        <Menu.Item key='logout'>
-                            <Svg type='LogoutOutlined'/>
+                        <Menu.Item key={'logout'}>
+                            <Svg type={'LogoutOutlined'}/>
                             <span>注销</span>
                         </Menu.Item>
                     </SubMenu>

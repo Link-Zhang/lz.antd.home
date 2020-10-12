@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, Statistic} from 'antd';
 import PropTypes from 'prop-types';
+import {Card, Statistic} from 'antd';
 import CountUp from 'react-countup';
 
 import './index.less';
@@ -8,9 +8,7 @@ import Svg from '../../../../components/Svg';
 
 const NumberCard = ({svg, color, title, number, unit}) => {
     return (
-        <Card hoverable
-            // style={{backgroundColor: '#011528', border: 0}}
-        >
+        <Card hoverable size={'small'}>
             <Statistic
                 title={title}
                 value={' '}
@@ -19,7 +17,7 @@ const NumberCard = ({svg, color, title, number, unit}) => {
                     <div>
                         <Svg type={svg}/>
                         {'    '}
-                        <CountUp start={0} end={number} duration={2.75} useEasing useGrouping separator=","/>
+                        <CountUp start={0} end={number} duration={2.75} useEasing useGrouping separator={','}/>
                     </div>
                 }
                 suffix={unit}

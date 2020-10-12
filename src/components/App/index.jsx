@@ -15,16 +15,16 @@ import Dashboard from '../../pages/Dashboard/index';
 
 const routes = [
     {
-        path: "/",
+        path: '/',
         exact: true,
         children: <Dashboard/>
     },
     {
-        path: "/community",
+        path: '/community',
         children: <Community/>
     },
     {
-        path: "/house",
+        path: '/house',
         children: <House/>
     }
 ];
@@ -33,13 +33,6 @@ const {Content} = Layout;
 
 class App extends React.Component {
     render() {
-        if (this.props.darkTheme) {
-            console.log("Dark Mode");
-            require('./dark.less');
-        } else {
-            console.log("Light Mode");
-            require('./light.less');
-        }
         return (
             <Layout>
                 <Side/>
@@ -68,13 +61,11 @@ class App extends React.Component {
 
 App.propTypes = {
     sideCollapse: PropTypes.bool,
-    darkTheme: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
     return {
         sideCollapse: state.App.sideCollapse,
-        darkTheme: state.App.darkTheme,
     };
 };
 

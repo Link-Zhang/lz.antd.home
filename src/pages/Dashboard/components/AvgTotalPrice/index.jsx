@@ -7,8 +7,8 @@ import NumberCard from '../NumberCard';
 class AvgTotalPrice extends React.PureComponent {
     render() {
         return (
-            <NumberCard svg={'DollarOutlined'} color={'#6DC8EC'} title={'平均总价'}
-                        number={this.props.avgTotalPrice || 0} unit={'万元'}/>
+            <NumberCard svg={'DollarOutlined'} color={'#FF4D4F'} title={'平均总价'}
+                        number={this.props.avgTotalPrice || 0} unit={'万'}/>
         );
     }
 }

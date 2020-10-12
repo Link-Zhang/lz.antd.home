@@ -7,7 +7,7 @@ import NumberCard from '../NumberCard';
 class RiseHouse extends React.PureComponent {
     render() {
         return (
-            <NumberCard svg={'ArrowUpOutlined'} color={'#CF1322'} title={'涨价房屋'}
+            <NumberCard svg={'ArrowUpOutlined'} color={'#FA541C'} title={'涨价房屋'}
                         number={this.props.riseHouse || 0} unit={'套'}/>
         );
     }
